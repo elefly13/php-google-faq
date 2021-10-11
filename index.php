@@ -14,12 +14,30 @@
         }
         header {
             position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
             top: 0;
             left: 0;
             width: 100%;
             height: 100px;
             border-bottom:1px solid  rgba(0,0,0,0.87);
             background-color: white;
+        }
+        .boxNav {
+            height: 35px;
+        }
+        .boxNav span {
+            padding: 10px 20px;
+        }
+        span a {
+            color: rgba(0,0,0,0.87);
+            padding: 11px 20px;
+        }
+        span a:hover {
+            color: blue;
+            border-bottom:3px solid blue;
+            
         }
         main {
             width: 45%;
@@ -63,7 +81,20 @@
 </head>
 <body>
     <header>
-
+        <div class="boxNav">
+            <?php 
+                $navbar = [
+                    "Introduzione",
+                    "Norme sulla privacy",
+                    "Termini di servizio",
+                    "Tecnologie",
+                    "Domande frequenti"
+                ];
+                foreach($navbar as $link) {
+                    echo '<span><a href="#">' . $link . '</a></span>';
+                }
+            ?>
+        </div>
     </header>
     <main >
     <?php 
